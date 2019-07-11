@@ -16,6 +16,7 @@ okta_client = UsersClient("https://dev-764808.okta.com", "00eyvjQ5-edxVO-whsoxWb
 @app.before_request
 def before_request():
     if oidc.user_loggedin:
+        g.token = oidc.get_access_token()
         g.user = okta_client.get_user(oidc.user_getfield("sub"))
     else:
         g.user = None
@@ -24,9 +25,17 @@ def before_request():
 def index():
     return render_template("index.html")
 
+
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+
+    if oidc.user_loggedin:
+        print(oidc.user_getinfo('group'))
+        return render_template("dashboard.html")
+    else:
+        return redirect(url_for(".index"))
+
+
 
 @app.route("/login")
 @oidc.require_login
