@@ -1,1 +1,7 @@
-<div>Applicant here</div>
+{% extends "layout.html" %}
+{% block title %}Recruiter{% endblock %}
+{% block body %}
+<div>
+    <h1>Welcome {{ g.user.profile.firstName }}!</h1>
+</div>
+{% endblock %}

@@ -14,18 +14,16 @@ app.config["OIDC_SCOPES"] = ["openid", "email", "profile"]
 app.config["OIDC_ID_TOKEN_COOKIE_NAME"]="oidc_token"
 app.config["SECRET_KEY"] = "{{ LONG_RANDOM_STRING }}"
 oidc = OpenIDConnect(app)
-
-
-
 okta_client = UsersClient("https://dev-764808.okta.com", "00eyvjQ5-edxVO-whsoxWbORgbfr7kc--8cuSckLzZ")
 
 
 def convert(data):
     if isinstance(data, bytes):  return data.decode('ascii')
     return data
+
+
 @app.before_request
 def before_request():
-    print(oidc.user_loggedin)
     if oidc.user_loggedin:
         if oidc.get_access_token() is None:
             oidc.logout()
@@ -43,17 +41,23 @@ def before_request():
     else:
         g.user = None
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
 
+
 @app.route("/dashboard")
+@oidc.require_login
 def dashboard():
-    print(g.groups)
+
     if 'applicant' in g.groups:
+        g.userRole = 'applicant'
         return render_template("applicant/applicant_dashboard.html")
     elif 'recruiter' in g.groups:
+        g.userRole = 'recruiter'
         return render_template("recruiter/recruiter_dashboard.html")
+
 
 @app.route("/login")
 @oidc.require_login
