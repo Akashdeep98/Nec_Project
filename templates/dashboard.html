@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %} Dashboard {% endblock %}
 
 {% block body %}
   <h1 class="text-center">Dashboard</h1>
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
-      <p>Welcome to the dashboard, {{ g.user }}!</p>
+      <p>Welcome to the dashboard, {{ g.user.profile.firstName }}!</p>
+        {{ groups }}
         <p>{{ g.token }}</p>
+        <p><a href="{{ g.user.profile.profileUrl }}">Profile</a></p>
+{#        <p>Group Id: {{ g.user.groupId }}</p>#}
       <p>Your user information has been pulled from the <code>g.user</code>
       object, which makes accessing your user information simple. Your first
       name, for example, is available via the <code>g.user.profile.firstName</code>
