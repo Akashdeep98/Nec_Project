@@ -114,37 +114,51 @@ def logout():
 
 @app.route("/register_applicant",methods=['GET','POST'])
 def register():
-    x = requests.get('https://dev-764808.okta.com/api/v1/groups',
-                     headers={'Accept': 'application/json', 'Content-Type': 'application/json',
-                              'Authorization': 'SSWS 00eyvjQ5-edxVO-whsoxWbORgbfr7kc--8cuSckLzZ'})
-    print(x)
     if request.method == "POST":
         details=request.form
         email=details['email']
         password=details['password']
         fname=details['fname']
         lname=details['lname']
-        # cur = mysql.cursor()
-        # cur.execute("INSERT INTO applicants(email, password, firstname, lastname) VALUES (%s, %s, %s, %s)",
-        #     (email, password, fname,lname))
-        # mysql.commit()
-        # cur.close()
+        cur = mysql.cursor()
+        cur.execute("INSERT INTO applicant(email, password, firstname, lastname) VALUES (%s, %s, %s, %s)",
+            (email, password, fname,lname))
+        mysql.commit()
+        cur.close()
 
-        r = requests.post('https://dev-764808.okta.com/api/v1/users?activate=false',headers={'Accept': 'application/json','Content-Type': 'application/json','Authorization': 'SSWS 00eyvjQ5-edxVO-whsoxWbORgbfr7kc--8cuSckLzZ' }, params=
-        {
-                "profile": {
-                    "firstName": "Isaac",
-                     "lastName": "Brock",
-                      "email": "isaac.brock@example.com",
-                    "login": "isaac.brock@example.com",
-                    "mobilePhone": "555-415-1337"
-
-                }
-  });
-        print(r, r.text)
+        r = requests.post('https://dev-764808.okta.com/api/v1/users?activate=True',headers={'Accept': 'application/json','Content-Type': 'application/json','Authorization': 'SSWS 00eyvjQ5-edxVO-whsoxWbORgbfr7kc--8cuSckLzZ' }, data=
+            json.dumps({"profile":{"firstName": fname,"lastName": lname,"email": email,"login":email,},"credentials": {"password": {"value": password}},"groupIds": [
+            "00gvb1017okyJvFsq356"
+            ]}));
+        if r.status_code==200:
+            return redirect(url_for('.index'))
+        else:
+            return render_template("register1.html")
     return render_template("register.html")
 @app.route("/register_recruiter",methods=['GET','POST'])
 def register1():
+    if request.method == "POST":
+        details=request.form
+        email=details['email']
+        password=details['password']
+        fname=details['fname']
+        lname=details['lname']
+        cur = mysql.cursor()
+        cur.execute("INSERT INTO recruiter(email, password, firstname, lastname) VALUES (%s, %s, %s, %s)",(email, password, fname,lname))
+        mysql.commit()
+        cur.close()
+        r = requests.post('https://dev-764808.okta.com/api/v1/users?activate=True',
+                          headers={'Accept': 'application/json', 'Content-Type': 'application/json',
+                                   'Authorization': 'SSWS 00eyvjQ5-edxVO-whsoxWbORgbfr7kc--8cuSckLzZ'}, data=
+                          json.dumps(
+                              {"profile": {"firstName": fname, "lastName": lname, "email": email, "login": email, },
+                               "credentials": {"password": {"value": password}}, "groupIds": [
+                                  "00guv5r24PfJ3myX8356"
+                              ]}));
+        if r.status_code == 200:
+            return redirect(url_for('.index'))
+        else:
+            return render_template("register1.html")
     return render_template("register1.html")
 @app.route("/postJob", methods=['POST'])
 @oidc.require_login
