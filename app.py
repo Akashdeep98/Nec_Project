@@ -131,7 +131,7 @@ def register():
             "00gvb1017okyJvFsq356"
             ]}));
         if r.status_code==200:
-            return redirect(url_for('.index'))
+            return redirect(url_for('.login'))
         else:
             return render_template("register1.html")
     return render_template("register.html")
@@ -156,7 +156,7 @@ def register1():
                                   "00guv5r24PfJ3myX8356"
                               ]}));
         if r.status_code == 200:
-            return redirect(url_for('.index'))
+            return redirect(url_for('.login'))
         else:
             return render_template("register1.html")
     return render_template("register1.html")
