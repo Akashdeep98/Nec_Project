@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+{% block title %}Applicant{% endblock %}
+{% block body %}
+<div class="container">
+    {% for job in job_list %}
+        <form action = "/apply_job" method = "post">
+   {% set x = job[0] %}
+        <div class="card mt-5">
+            <div class="card-header">
+                <b>Job Title</b>
+                <span class="float-right">
+                    {{ job[1] }}</span>
+
+
+            </div>
+            <div class="card-body">
+                <b>Job Description</b>
+                    <span class="float-right">
+                         {{ job[2]  }}</span>
+
+
+            </div>
+            <div class="card-footer">
+                <span><b>Skills required</b></span>
+                <span class="float-right">
+                    {{ job[3] }}<br>
+
+                </span>
+
+            </div>
+             <button type = submit  name = "apply"class="btn btn-info float-right" value = {{ job[0] }}> Apply </button>
+        </div></form>
+    {% endfor %}
+
+</div>
+    <br><br><br>
+
+<a href="about_us.html" style="position:relative;left:150px">About Us</a>
+<a href="Our_Team.html" style="position:relative;left:530px">Our Team</a>
+<a href="contact_us.html" style="position:relative;left:930px">Contact Us</a>
+{% endblock %}

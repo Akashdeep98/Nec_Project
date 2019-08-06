@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}Recruiter{% endblock %}
+{% block body %}
+<div class="container">
+<table class="table table-hover table-striped" border="2">
+
+    <tr style="border: 2px solid #000">
+        <th>JobId</th>
+        <th>ApplicantId</th>
+        <th>Status</th>
+    </tr>
+    {% for applicaions in applications_list %}
+    <tr style="border: 2px solid #000">
+        <td>
+            {{ applicaions[0] }}
+        </td>
+        <td>
+            {{ applicaions[1] }}
+        </td>
+        <td>
+            {{ applicaions[2] }}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+{% endblock %}

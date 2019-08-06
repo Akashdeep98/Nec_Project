@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="150" cy="150" r="150" fill="#8996A3" fill-opacity=".3"/>
+    <g transform="translate(54 69)">
+      <rect width="192" height="163" fill="#FFF" rx="10"/>
+      <path fill="#8996A3" d="M10,0 L182,0 C187.522847,-1.01453063e-15 192,4.4771525 192,10 L192,28 L0,28 L0,10 C-6.76353751e-16,4.4771525 4.4771525,1.01453063e-15 10,0 Z"/>
+      <circle cx="15" cy="14" r="5" fill="#FFF"/>
+      <circle cx="31" cy="14" r="5" fill="#FFF"/>
+      <circle cx="47" cy="14" r="5" fill="#FFF"/>
+    </g>
+    <g transform="translate(74 110)">
+      <circle cx="14" cy="14" r="14" fill="#155794"/>
+      <polygon fill="#FFF" fill-rule="nonzero" points="18.869 9.66 12.315 16.209 8.956 12.902 7.155 14.668 12.45 19.849 20.955 11.759"/>
+      <rect width="66" height="7.875" x="37.76" y="4.375" fill="#155794"/>
+      <rect width="104" height="7.875" x="37.76" y="16.75" fill="#155794"/>
+    </g>
+    <g transform="translate(74 147)">
+      <circle cx="14" cy="14" r="14" fill="#155794"/>
+      <polygon fill="#FFF" fill-rule="nonzero" points="18.869 9.66 12.315 16.209 8.956 12.902 7.155 14.668 12.45 19.849 20.955 11.759"/>
+      <rect width="82.392" height="7.875" x="37.76" y="4.375" fill="#155794"/>
+      <rect width="114" height="7.875" x="37.76" y="16.75" fill="#155794"/>
+    </g>
+    <g transform="translate(74 185)">
+      <circle cx="14" cy="14" r="14" fill="#8996A3" opacity=".5"/>
+      <polygon fill="#FFF" fill-rule="nonzero" points="18.869 9.66 12.315 16.209 8.956 12.902 7.155 14.668 12.45 19.849 20.955 11.759"/>
+      <rect width="58.39" height="7.875" x="37.76" y="4.375" fill="#8996A3" opacity=".5"/>
+      <rect width="94" height="7.875" x="37.76" y="16.75" fill="#8996A3" opacity=".5"/>
+    </g>
+  </g>
+</svg>

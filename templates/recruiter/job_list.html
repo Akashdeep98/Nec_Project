@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Recruiter{% endblock %}
+{% block body %}
+
+<div class="container">
+    {% for job in job_list %}
+        <div class="card mt-5">
+            <div class="card-header">
+                <div><b>Job Title</b></div>
+                <div>
+                    {{ job[1] }}
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div><b>Job Description</b></div>
+                <div>
+                    {{ job[2]  }}
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <span><b>Skills required</b></span>
+                <span class="float-right">
+                    {% for skills in job[3].split(",") %}
+                        {{ skills }}<br>
+                    {% endfor %}
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

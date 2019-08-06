@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Recruiter{% endblock %}
+{% block body %}
+
+<div class="container">
+    <form action="/postJob" method="post" class="form-control">
+        <div class="card">
+            <div class="card-header">
+                Post Your Job
+            </div>
+            <div class="card-body">
+                <input type="text" name="jobTitle" placeholder="Enter job title" class="form-control">
+                <input type="text" name="jobDescription" placeholder="Enter job description" class="form-control">
+                <input type="text" name="jobSkills" placeholder="Enter Skills required for the job(comma seperated)" class="form-control">
+
+            </div>
+            <div class="card-footer">
+                <input type="submit" class="btn btn-success float-right" value="Post Job">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+.service1
+{
+	border:10px solid white;
+	border-radius:25px;
+	padding:20px;
+	margin-left:130px;
+	width:300px;
+	float:left;
+	height:400px;
+	text-align:center;
+	font-size:35px;
+	font-family:'Gloria Hallelujah','Comic Sans MS',monospace;
+	color:white;
+	background:#9f9e9c;
+	display:inline-block;
+}
+.service1:hover
+{
+	width: 320px;
+  	height: 430px;
+  	margin-top: -18px;
+ 	-moz-box-shadow:    0 0 50px black;
+ 	-webkit-box-shadow: 0 0 50px black;
+ 	box-shadow:         0 0 50px black;
+ 	margin-left:110px;
+}
+.service2
+{	border:10px solid white;
+	border-radius:25px;
+	margin-left:70px;
+	padding:20px;
+	width:300px;
+	height:400px;
+	float:center;
+	text-align:center;
+	font-size:35px;
+	font-family:'Gloria Hallelujah','Comic Sans MS',monospace;
+	color:white;
+	background:#9f9e9c;
+	display:inline-block;
+}
+.service2:hover
+{
+	width: 320px;
+  	height: 430px;
+  	margin-top: -18px;
+ 	-moz-box-shadow:    0 0 50px black;
+ 	-webkit-box-shadow: 0 0 50px black;
+ 	box-shadow:         0 0 50px black;
+
+}

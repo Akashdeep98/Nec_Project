@@ -1,8 +1,43 @@
 {% extends "layout.html" %}
 {% block title %}Recruiter{% endblock %}
 {% block body %}
-<div>
-    <h1>Welcome {{ g.user.profile.firstName }}!</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card" style="width:500px; background: #ffffff">
+            <img class="card-img-top" src="../../static/images/application_icon.jpeg" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Applications</h4>
+                <p class="card-text p-3">Applicants have shown interest in your posted jobs.
+                    Good luck in selecting the best suited candidate for your vacancies.
+                </p>
+                <a href="/get_applications" class="btn btn-info float-right">
+                    View Applications on your posted jobs
+                </a>
+              </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card" style="width:500px; background: #ffffff;">
+            <div style="background: rgba(0,0,0,.036); padding: 5%;">
+                <img class="card-img-top" src="../../static/images/posted-jobs.svg" alt="" style="height: 325px;">
+            </div>
+          <div class="card-body">
+            <h4 class="card-title">Posted Jobs</h4>
+            <p class="card-text p-4">
+                We are glad to have you on board with these job lists that you have posted with us.<br>
+            </p>
+
+            <a href="/jobList" class="btn btn-success">View Posted Jobs</a>
+          </div>
+        </div>
+    </div>
+<br><br><br>
+
+<a href="about_us.html" style="position:relative;left:150px">About Us</a>
+<a href="Our_Team.html" style="position:relative;left:530px">Our Team</a>
+<a href="contact_us.html" style="position:relative;left:930px">Contact Us</a>
 </div>
+
 
 {% endblock %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 100%;
+  margin-bottom: 160px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 80%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: black;
+  display: block;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1 align='center'>About Us </h2>
+<br>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="nec.jpg" alt="NECTI" style="width:100%;height:400px">
+      <div class="container">
+        <h2>NEC Technologies India</h2><br>
+        <p class="title"><h3>Intelligence for Cities and Communities, and the World</h3>
+</p>
+        <p>NEC’s strengths lie in its outstanding technologies capable of contributing to the development of society, such as sensing, identification, surveillance, control and cloud platforms.
+By taking full advantage of these technologies, NEC will create new value together with customers by supporting four networks underpinning society, namely energy, information, transportation and distribution and social networks.</p><br>
+
+<p class="title"><h3>Promoting the "C&C Cloud Strategy" to Realize an Information Society Friendly to Humans and the Earth</h3>
+</p>
+        <p>Based on this recognition, NEC has established the NEC Group Vision 2017 as follows: "To be a leading global company leveraging the power of innovation to realize an information society friendly to humans and the earth."
+
+What sort of society does NEC mean by "an information society friendly to humans and the earth"? NEC defines this concept as "a society where people around the world can lead enriched lifestyles that are safe, secure and convenient through services accessible by anyone, anytime, and anywhere." At the same time, this society must "enable sustained development in harmony with the environment by utilizing finite resources efficiently."
+To help realize such a society, NEC is implementing its "C&C Cloud Strategy." In essence, the "cloud" refers to providing customers with IT services over networks. Meanwhile, "C&C" is the central concept of NEC’s Corporate Philosophy. The meaning of "C&C," which stands for integration of Computers and Communications, has changed over the years. The"C&C" concept now embodies NEC’s aspirations to create new value by linking people together, with the view to enhance the abilities of people and realize our vision.</p>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
